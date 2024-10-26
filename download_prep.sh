@@ -15,7 +15,7 @@ if [ ! -f $pkg/content.tar ]; then
    RC=1 
    while [[ $RC -ne 0 ]]
    do
-      rsync -avR $host:$dir/$pkg/content.tar $pkg/
+      rsync -av $host:$dir/$pkg/content.tar $pkg/
       RC=$?
    done
 fi
