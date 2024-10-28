@@ -27,14 +27,16 @@ fi
 cd $pkg
 rm -f content.tar
 
-for dir in $(find . -type d); do
-  mkdir -p /$dir
-done
+sudo rsync -av . /
 
-pwd=$(pwd)
-for file in $(find . -type f); do
-  ln -s $pwd/$file /$file || true
-done
+#for dir in $(find . -type d); do
+#  mkdir -p /$dir
+#done
+#
+#pwd=$(pwd)
+#for file in $(find . -type f); do
+#  ln -s $pwd/$file /$file || true
+#done
 
 
 
