@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 P=$1
 
 pushd $P
