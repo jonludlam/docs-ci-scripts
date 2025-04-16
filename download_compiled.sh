@@ -9,6 +9,8 @@ pkg=$3    # compile/p/csexp/1.5.2
 epoch=$4  # <hash>
 cache=$5  # 'true' or 'false'
 
+echo "Downloading compiled pkg $pkg from $host enable_cache=$cache"
+
 if [ "$cache" = "true" ]; then
   ldir=/home/opam/.cache/
 else

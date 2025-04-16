@@ -8,6 +8,8 @@ dir=$2    # /data/data/
 pkg=$3    # prep0/u/745d6c5e6ba222bcc493e3bdedc73465/cmdliner/1.3.0/
 cache=$4  # 'true' or 'false'
 
+echo "Downloading prep package $pkg from $host enable_cache=$cache"
+
 if [ "$cache" = "true" ]; then 
   cd /home/opam/.cache/prep
 else
