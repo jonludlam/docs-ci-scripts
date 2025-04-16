@@ -10,6 +10,7 @@ epoch=$4  # <hash>
 cache=$5  # 'true' or 'false'
 
 echo "Downloading compiled pkg $pkg from $host enable_cache=$cache"
+date
 
 if [ "$cache" = "true" ]; then
   ldir=/home/opam/.cache/
