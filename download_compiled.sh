@@ -7,12 +7,18 @@ host=$1   # gamma
 dir=$2    # /data/data/
 pkg=$3    # compile/p/csexp/1.5.2 
 epoch=$4  # <hash>
+cache=$5  # 'true' or 'false'
 
-cd /home/opam/.cache/
+if [ "$cache" = "true" ]; then
+  ldir=/home/opam/.cache/
+else
+  ldir=/tmp/
+fi
 
+cd $ldir
 
 mkdir -p /home/opam/docs/$(dirname $pkg)
-ln -sf /home/opam/.cache/$pkg /home/opam/docs/$(dirname $pkg)
+ln -sf $ldir$pkg /home/opam/docs/$(dirname $pkg)
 
 if [ -f $pkg/.epoch ]; then
 	if [[ $(< $pkg/.epoch) == "$epoch" ]]; then
